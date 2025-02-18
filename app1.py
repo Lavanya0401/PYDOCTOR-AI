@@ -22,7 +22,7 @@ You are a Python code reviewer. Your task is to analyze submitted code, identify
 - Output the fully functional, corrected Python code.
 """
 # Initialize Google Gemini AI Model
-model = genai.GenerativeModel("gemini-2.0-flash-exp",system_instructions=SYSEM_PROMPT)
+model = genai.GenerativeModel("gemini-2.0-flash-exp",system_instructions=SYSTEM_PROMPT)
 def review_code(code):
     try:
         prompt = f"Review this Python code:\npython\n{code}\n"
