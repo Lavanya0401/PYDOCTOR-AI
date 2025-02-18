@@ -4,6 +4,7 @@ import streamlit as st
 
 # ðŸ”¹ Load API Key Securely (Replace with your actual key or set as an environment variable)
 API_KEY = os.getenv("GEMINI_API_KEY")
+genai.configure(api_key=API_KEY)
 
 
 
