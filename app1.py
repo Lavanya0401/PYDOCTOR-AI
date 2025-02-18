@@ -6,7 +6,7 @@ import streamlit as st
 API_KEY = os.getenv("GEMINI_API_KEY")
 
 # Initialize Google Gemini AI Model
-model = genai.GenerativeModel("gemini-1.5-pro-latest")
+model = genai.GenerativeModel("gemini-2.0-flash-exp")
 
 # System Prompt for AI
 SYSTEM_PROMPT = """
