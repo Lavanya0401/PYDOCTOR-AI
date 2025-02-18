@@ -5,8 +5,7 @@ import streamlit as st
 # ðŸ”¹ Load API Key Securely (Replace with your actual key or set as an environment variable)
 API_KEY = os.getenv("GEMINI_API_KEY")
 
-# Initialize Google Gemini AI Model
-model = genai.GenerativeModel("gemini-2.0-flash-exp")
+
 
 # System Prompt for AI
 SYSTEM_PROMPT = """
@@ -22,10 +21,11 @@ You are a Python code reviewer. Your task is to analyze submitted code, identify
 ### ✅ Corrected Code
 - Output the fully functional, corrected Python code.
 """
-
+# Initialize Google Gemini AI Model
+model = genai.GenerativeModel("gemini-2.0-flash-exp",system_instructions=SYSEM_PROMPT)
 def review_code(code):
     try:
-        prompt = f"{SYSTEM_PROMPT}\n\nReview this Python code:\npython\n{code}\n"
+        prompt = f"Review this Python code:\npython\n{code}\n"
         response = model.generate_content(prompt)
         return response.text if hasattr(response, "text") else response.parts[0].text
     except Exception as e:
