@@ -42,7 +42,7 @@ def extract_fixed_code(review_text):
 import base64
 
 # âœ… Define image path
-image_path = os.path.join(os.path.expanduser("~"), "Documents", "AI_PyDoctor_logo.png")
+image_path = "AI_PyDoctor_logo.png"
 
 def main():
     st.set_page_config(page_title="AI PyDoctor", layout="wide")
